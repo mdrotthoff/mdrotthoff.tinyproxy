@@ -1,0 +1,11 @@
+# test file for haproxy
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  roles:
+    - ../../
+  vars:
+    tinyproxy_listen_address: 0.0.0.0
+    tinyproxy_port: 8888
+    tinyproxy_allowed_subnet: "127.0.1.0/24"

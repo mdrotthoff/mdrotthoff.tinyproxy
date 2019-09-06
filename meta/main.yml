@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Adam Hamsik
+  description: Tinyproxy install/setup role
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - precise
+        - xenial
+  galaxy_tags:
+    - system
+    - networking
+    - proxy
+dependencies: []

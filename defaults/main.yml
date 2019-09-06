@@ -1,0 +1,31 @@
+---
+tinyproxy_log_level: Info
+
+tinyproxy_maxclients: 100
+tinyproxy_minspare_servers: 2
+tinyproxy_maxspare_servers: 5
+tinyproxy_startservers: 2
+tinyproxy_maxrequest: 0
+
+tinyproxy_allowed_subnets:
+  - 0.0.0.0
+tinyproxy_denied_subnets: []
+
+tinyproxy_listen_addresses:
+  - 0.0.0.0
+tinyproxy_port: 8888
+
+tinyproxy_upstream_proxies: []
+
+
+# tinyproxy_via_header: tinyproxy
+
+tinyproxy_connect_ports:
+  - 443
+
+#tinyproxy_filtering:
+#  filter: "/etc/tinyproxy/filter"
+#  urls: On
+#  extended: On
+#  default_deny: Off
+#  case_sensitive: Off
