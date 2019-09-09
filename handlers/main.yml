@@ -3,7 +3,6 @@
 ## Restart handler ##
 
 - name: restart tinyproxy
-  become: yes
   service:
-    name = tinyproxy
-    state = restarted
+    name: tinyproxy
+    state: restarted
