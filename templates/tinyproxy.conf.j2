@@ -1,5 +1,5 @@
-User nobody
-Group nogroup
+User {{ tinyproxy_os_user }}
+Group {{ tinyproxy_os_group }}
 
 {% for address in tinyproxy_listen_addresses %}
 Listen {{ address }}
