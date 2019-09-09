@@ -7,7 +7,7 @@
 - name: Setup Tinyproxy Config file
   template:
     src: tinyproxy.conf.j2
-    dest: {{ tinyproxy_conf }}
+    dest: "{{ tinyproxy_conf }}"
   notify:
     - restart tinyproxy
 
