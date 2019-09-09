@@ -34,6 +34,7 @@ tinyproxy_filtering:
   case_sensitive: Off
 
 tinyproxy_upstream_proxies:
- - "www.proxy1.none:8888"
- - "www.proxy2.none:8888"
- - "www.proxy3.none:8888"
+ - adddress: "www.proxy1.none:8888"
+ - address: "www.proxy2.none:8888"
+ - address: "www.proxy3.none:8888"
+   url: "Nonsense.url"
