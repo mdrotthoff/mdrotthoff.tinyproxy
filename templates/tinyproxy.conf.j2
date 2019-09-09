@@ -46,9 +46,9 @@ Upstream {{ proxy.address }} {% if proxy.url is defined %} {{ proxy.url }} {% en
 {% endfor %}
 {% endif %}
 
-{% if tinyproxy_via_header is defined %}?
+{% if tinyproxy_via_header is defined %}
 ViaProxyName "{{ tinyproxy_via_header }}"
-{%- else -%}
+{% else %}
 DisableViaHeader Yes
 {%- endif %}
 
