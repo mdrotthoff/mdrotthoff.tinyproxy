@@ -16,9 +16,10 @@ tinyproxy_denied_subnets: []
 
 tinyproxy_listen_addresses:
   - 0.0.0.0
+
 tinyproxy_port: 8888
 
-tinyproxy_upstream_proxies: []
+#tinyproxy_upstream_proxies: []
 
 tinyproxy_via_header: tinyproxy
 
