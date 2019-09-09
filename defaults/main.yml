@@ -11,8 +11,14 @@ tinyproxy_startservers: 2
 tinyproxy_maxrequest: 0
 
 tinyproxy_allowed_subnets:
-  - 0.0.0.0
-tinyproxy_denied_subnets: []
+  - 192.168.60.0/24
+  - 192.168.61.0/24
+#  - 0.0.0.0
+
+#tinyproxy_denied_subnets: []
+tinyproxy_denied_subnets:
+  - 192.168.63.0/24
+  - 192.168.64.0/24
 
 tinyproxy_listen_addresses:
   - 0.0.0.0
@@ -25,6 +31,7 @@ tinyproxy_via_header: tinyproxy
 
 tinyproxy_connect_ports:
   - 443
+  - 563
 
 tinyproxy_filtering:
   filter: "/etc/tinyproxy/filter"
