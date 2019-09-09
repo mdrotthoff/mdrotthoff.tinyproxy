@@ -20,8 +20,7 @@ tinyproxy_port: 8888
 
 tinyproxy_upstream_proxies: []
 
-
- tinyproxy_via_header: tinyproxy
+tinyproxy_via_header: tinyproxy
 
 tinyproxy_connect_ports:
   - 443
