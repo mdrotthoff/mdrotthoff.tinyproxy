@@ -1,9 +1,9 @@
 User {{ tinyproxy_os_user }}
 Group {{ tinyproxy_os_group }}
 
-{%- for address in tinyproxy_listen_addresses -%}
+{% for address in tinyproxy_listen_addresses -%}
 Listen {{ address }}
-{%- endfor -%}
+{%- endfor %}
 
 Port {{ tinyproxy_port }}
 Timeout 600
@@ -23,21 +23,21 @@ StartServers {{ tinyproxy_startservers }}
 MaxRequestsPerChild {{ tinyproxy_maxrequest }}
 
 Allow 127.0.0.1
-{%- for subnet in tinyproxy_allowed_subnets -%}
+{% for subnet in tinyproxy_allowed_subnets -%}
 Allow {{ subnet }}
-{%- endfor -%}
+{%- endfor %}
 
-{%- for subnet in tinyproxy_denied_subnets -%}
+{% for subnet in tinyproxy_denied_subnets -%}
 Deny {{ subnet }}
-{%- endfor -%}
+{%- endfor %}
 
-{%- if tinyproxy_filtering is defined -%}
+{% if tinyproxy_filtering is defined -%}
 Filter {{ tinyproxy_filtering.filter }}
 FilterURLs {{ tinyproxy_filtering.urls }}
 FilterExtended {{ tinyproxy_filtering.extended }}
 FilterCaseSensitive {{ tinyproxy_filtering.case_sensitive }}
 FilterDefaultDeny {{ tinyproxy_filtering.default_deny }}
-{%- endif -%}
+{%- endif %}
 
 {%- if tinyproxy_upstream_proxies is defined -%}
     {%- for proxy in tinyproxy_upstream_proxies -%}
@@ -45,11 +45,11 @@ Upstream {{ proxy.address }} {% if proxy.url is defined %} {{ proxy.url }} {% en
     {%- endfor -%}
 {%- endif -%}
 
-{%- if tinyproxy_via_header is defined -%}
+{% if tinyproxy_via_header is defined -%}?Upst
 ViaProxyName "{{ tinyproxy_via_header }}"
 {%- else -%}
 DisableViaHeader Yes
-{%- endif -%}
+{%- endif %}
 
 {%- for port in tinyproxy_connect_ports | default([]) -%}
 ConnectPort {{ port }}
