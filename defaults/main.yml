@@ -21,14 +21,19 @@ tinyproxy_port: 8888
 tinyproxy_upstream_proxies: []
 
 
-# tinyproxy_via_header: tinyproxy
+ tinyproxy_via_header: tinyproxy
 
 tinyproxy_connect_ports:
   - 443
 
-#tinyproxy_filtering:
-#  filter: "/etc/tinyproxy/filter"
-#  urls: On
-#  extended: On
-#  default_deny: Off
-#  case_sensitive: Off
+tinyproxy_filtering:
+  filter: "/etc/tinyproxy/filter"
+  urls: On
+  extended: On
+  default_deny: Off
+  case_sensitive: Off
+
+tinyproxy_upstream_proxies:
+ - "www.proxy1.none:8888"
+ - "www.proxy2.none:8888"
+ - "www.proxy3.none:8888"
