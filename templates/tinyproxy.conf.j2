@@ -52,6 +52,6 @@ ViaProxyName "{{ tinyproxy_via_header }}"
 DisableViaHeader Yes
 {%- endif %}
 
-{%- for port in tinyproxy_connect_ports | default([]) -%}
+{% for port in tinyproxy_connect_ports | default([]) -%}
 ConnectPort {{ port }}
-{%- endfor -%}
+{%- endfor %}
