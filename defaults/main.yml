@@ -22,10 +22,10 @@ tinyproxy_denied_subnets:
 
 tinyproxy_listen_addresses:
   - 0.0.0.0
+  - 192.168.60.65
+  - 192.168.61.65
 
 tinyproxy_port: 8888
-
-#tinyproxy_upstream_proxies: []
 
 tinyproxy_via_header: tinyproxy
 
@@ -40,6 +40,7 @@ tinyproxy_filtering:
   default_deny: Off
   case_sensitive: Off
 
+#tinyproxy_upstream_proxies: []
 tinyproxy_upstream_proxies:
  - address: "www.proxy1.none:8888"
  - address: "www.proxy2.none:8888"
