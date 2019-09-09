@@ -11,19 +11,19 @@ tinyproxy_startservers: 2
 tinyproxy_maxrequest: 0
 
 tinyproxy_allowed_subnets:
-  - 192.168.60.0/24
-  - 192.168.61.0/24
-#  - 0.0.0.0
+  - 0.0.0.0
+#  - 192.168.60.0/24
+#  - 192.168.61.0/24
 
-#tinyproxy_denied_subnets: []
-tinyproxy_denied_subnets:
-  - 192.168.63.0/24
-  - 192.168.64.0/24
+tinyproxy_denied_subnets: []
+#tinyproxy_denied_subnets:
+#  - 192.168.63.0/24
+#  - 192.168.64.0/24
 
 tinyproxy_listen_addresses:
   - 0.0.0.0
-  - 192.168.60.65
-  - 192.168.61.65
+#  - 192.168.60.65
+#  - 192.168.61.65
 
 tinyproxy_port: 8888
 
@@ -33,16 +33,16 @@ tinyproxy_connect_ports:
   - 443
   - 563
 
-tinyproxy_filtering:
-  filter: "/etc/tinyproxy/filter"
-  urls: On
-  extended: On
-  default_deny: Off
-  case_sensitive: Off
+#tinyproxy_filtering:
+#  filter: "/etc/tinyproxy/filter"
+#  urls: On
+#  extended: On
+#  default_deny: Off
+#  case_sensitive: Off
 
-#tinyproxy_upstream_proxies: []
-tinyproxy_upstream_proxies:
- - address: "www.proxy1.none:8888"
- - address: "www.proxy2.none:8888"
- - address: "www.proxy3.none:8888"
-   url: "Nonsense.url"
+tinyproxy_upstream_proxies: []
+#tinyproxy_upstream_proxies:
+# - address: "www.proxy1.none:8888"
+# - address: "www.proxy2.none:8888"
+# - address: "www.proxy3.none:8888"
+#   url: "Nonsense.url"
