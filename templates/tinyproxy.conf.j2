@@ -37,7 +37,7 @@ FilterURLs {{ tinyproxy_filtering.urls }}
 FilterExtended {{ tinyproxy_filtering.extended }}
 FilterCaseSensitive {{ tinyproxy_filtering.case_sensitive }}
 FilterDefaultDeny {{ tinyproxy_filtering.default_deny }}
-{%- endif %}
+{% endif %}
 
 {% if tinyproxy_upstream_proxies is defined %}
     {% for proxy in tinyproxy_upstream_proxies %}
@@ -45,7 +45,7 @@ Upstream {{ proxy.address }} {% if proxy.url is defined %} {{ proxy.url }} {% en
     {% endfor %}
 {% endif %}
 
-{% if tinyproxy_via_header is defined -%}?
+{% if tinyproxy_via_header is defined %}?
 ViaProxyName "{{ tinyproxy_via_header }}"
 {%- else -%}
 DisableViaHeader Yes
