@@ -1,7 +1,7 @@
 ---
 tinyproxy_log_level: Info
 tinyproxy_os_user: tinyproxy
-tinyproxy_os_group+: tinyproxy
+tinyproxy_os_group: tinyproxy
 tinyproxy_conf: "/etc/tinyproxy/tinyproxy.conf"
 
 tinyproxy_maxclients: 100
