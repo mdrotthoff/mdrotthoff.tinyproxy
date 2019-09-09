@@ -42,7 +42,7 @@ FilterDefaultDeny {{ tinyproxy_filtering.default_deny }}
 {% if tinyproxy_upstream_proxies is defined -%}
     {%- for proxy in tinyproxy_upstream_proxies -%}
 Upstream {{ proxy.address }} {% if proxy.url is defined %} {{ proxy.url }} {% endif %}
-    {% endfor -%}
+    {% endfor %}
 {%- endif %}
 
 {% if tinyproxy_via_header is defined -%}?Upst
