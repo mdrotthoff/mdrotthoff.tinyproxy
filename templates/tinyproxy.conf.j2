@@ -54,4 +54,4 @@ DisableViaHeader Yes
 
 {% for port in tinyproxy_connect_ports | default([]) -%}
 ConnectPort {{ port }}
-{%- endfor %}
+{% endfor %}
