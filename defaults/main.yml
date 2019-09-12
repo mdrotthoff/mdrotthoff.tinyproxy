@@ -1,5 +1,4 @@
--:wq
---
+---
 tinyproxy_log_level: Info
 tinyproxy_os_user: tinyproxy
 tinyproxy_os_group: tinyproxy
@@ -12,11 +11,6 @@ tinyproxy_startservers: 2
 tinyproxy_maxrequest: 0
 
 #tinyproxy_allowed_subnets:
-#  - 0.0.0.0
-#  - 192.168.60.0/24
-#  - 192.168.61.0/24
-
-#tinyproxy_denied_subnets:
 #  - 0.0.0.0
 #  - 192.168.60.0/24
 #  - 192.168.61.0/24
@@ -47,4 +41,3 @@ tinyproxy_filtering:
 # - address: "www.proxy2.none:8888"
 # - address: "www.proxy3.none:8888"
 #   url: "Nonsense.url"
-
