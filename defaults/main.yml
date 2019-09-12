@@ -31,10 +31,10 @@ tinyproxy_connect_ports:
 
 tinyproxy_filtering:
   filter: "/etc/tinyproxy/filter"
-  urls: "On"
-  extended: "On"
-  default_deny: "Off"
-  case_sensitive: "Off"
+  urls: !!str On
+  extended: !!str On
+  default_deny: !!str Off
+  case_sensitive: !!str Off
 
 #tinyproxy_upstream_proxies:
 # - address: "www.proxy1.none:8888"
