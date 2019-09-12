@@ -1,17 +1,16 @@
 User {{ tinyproxy_os_user }}
 Group {{ tinyproxy_os_group }}
 
-{% for address in tinyproxy_listen_addresses -%}
+{% if tinyproxy_listen_addresses is defined %}{% for address in tinyproxy_listen_addresses %}
 Listen {{ address }}
-{%- endfor %}
+{% endfor %}{% endif %}
 
 Port {{ tinyproxy_port }}
-Timeout 600
+Timeout {{ tinyproxy_timeout }}
 
 DefaultErrorFile "/usr/share/tinyproxy/default.html"
 StatFile "/usr/share/tinyproxy/stats.html"
 PidFile "/var/run/tinyproxy/tinyproxy.pid"
-
 Logfile "/var/log/tinyproxy/tinyproxy.log"
 LogLevel {{ tinyproxy_log_level }}
 
@@ -19,19 +18,19 @@ MaxClients {{ tinyproxy_maxclients }}
 MinSpareServers {{ tinyproxy_minspare_servers }}
 MaxSpareServers {{ tinyproxy_maxspare_servers }}
 StartServers {{ tinyproxy_startservers }}
-
 MaxRequestsPerChild {{ tinyproxy_maxrequest }}
 
-Allow 127.0.0.1
-{% for subnet in tinyproxy_allowed_subnets -%}
+{% if tinyproxy_allowed_subnets is defined %}{% for subnet in tinyproxy_allowed_subnets %}
 Allow {{ subnet }}
-{% endfor %}
+{% endfor %}{% else %}
+Allow 127.0.0.1
+{% endif %}
 
-{% for subnet in tinyproxy_denied_subnets -%}
+{% if tinyproxy_denied_subnets is defined %}{% for subnet in tinyproxy_denied_subnets %}
 Deny {{ subnet }}
-{% endfor %}
+{% endfor %}{% endif %}
 
-{% if tinyproxy_filtering is defined -%}
+{% if tinyproxy_filtering is defined %}
 Filter {{ tinyproxy_filtering.filter }}
 FilterURLs {{ tinyproxy_filtering.urls }}
 FilterExtended {{ tinyproxy_filtering.extended }}
@@ -39,19 +38,18 @@ FilterCaseSensitive {{ tinyproxy_filtering.case_sensitive }}
 FilterDefaultDeny {{ tinyproxy_filtering.default_deny }}
 {% endif %}
 
-{% if tinyproxy_upstream_proxies is defined %}
-{%- for proxy in tinyproxy_upstream_proxies -%}
-Upstream {{ proxy.address }} {% if proxy.url is defined %} {{ proxy.url }} {% endif %}
+{% if tinyproxy_upstream_proxies is defined %}{% for proxy in tinyproxy_upstream_proxies %}
+Upstream {{ proxy.address }} {% if proxy.url is defined %}{{ proxy.url }}{% endif %}
 
-{% endfor %}
-{% endif %}
+{% endfor %}{% endif %}
 
 {% if tinyproxy_via_header is defined %}
 ViaProxyName "{{ tinyproxy_via_header }}"
 {% else %}
 DisableViaHeader Yes
-{%- endif %}
+{% endif %}
 
-{% for port in tinyproxy_connect_ports | default([]) -%}
+{% for port in tinyproxy_connect_ports | default([]) %}
 ConnectPort {{ port }}
 {% endfor %}
+
