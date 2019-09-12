@@ -10,15 +10,15 @@ tinyproxy_maxspare_servers: 5
 tinyproxy_startservers: 2
 tinyproxy_maxrequest: 0
 
-#tinyproxy_allowed_subnets:
-#  - 0.0.0.0
-#  - 192.168.60.0/24
-#  - 192.168.61.0/24
+tinyproxy_allowed_subnets:
+  - 0.0.0.0
+  - 192.168.60.0/24
+  - 192.168.61.0/24
 
-#tinyproxy_listen_addresses:
-#  - 0.0.0.0
-#  - 192.168.60.65
-#  - 192.168.61.65
+tinyproxy_listen_addresses:
+  - 0.0.0.0
+  - 192.168.60.65
+  - 192.168.61.65
 
 tinyproxy_port: 8888
 tinyproxy_timeout: 600
@@ -36,8 +36,8 @@ tinyproxy_filtering:
   default_deny: !!str Off
   case_sensitive: !!str Off
 
-#tinyproxy_upstream_proxies:
-# - address: "www.proxy1.none:8888"
-# - address: "www.proxy2.none:8888"
-# - address: "www.proxy3.none:8888"
-#   url: "Nonsense.url"
+tinyproxy_upstream_proxies:
+ - address: "www.proxy1.none:8888"
+ - address: "www.proxy2.none:8888"
+ - address: "www.proxy3.none:8888"
+   url: "Nonsense.url"
