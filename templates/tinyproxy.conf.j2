@@ -253,7 +253,7 @@ DisableViaHeader Yes
 # Filter: This allows you to specify the location of the filter file.
 #
 {% if tinyproxy_filtering is defined %}
-Filter {{ tinyproxy_filtering.filter }}
+Filter "{{ tinyproxy_filtering.filter }}"
 {% else %}
 #Filter "/etc/tinyproxy/filter"
 {% endif %}
