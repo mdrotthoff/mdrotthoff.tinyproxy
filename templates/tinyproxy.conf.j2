@@ -209,9 +209,11 @@ MaxRequestsPerChild {{ tinyproxy_maxrequest }}
 # The order of the controls are important. All incoming connections are
 # tested against the controls based on order.
 #
-{% if tinyproxy_allowed_subnets is defined %}{% for subnet in tinyproxy_allowed_subnets %}
+{% if tinyproxy_allowed_subnets is defined %}
+{% for subnet in tinyproxy_allowed_subnets %}
 Allow {{ subnet }}
-{% endfor %}{% else %}
+{% endfor %}
+{% else %}
 Allow 127.0.0.1
 {% endif %}
 
