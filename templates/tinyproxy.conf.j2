@@ -167,7 +167,7 @@ PidFile "/var/run/tinyproxy/tinyproxy.pid"
 #  IP/mask  matches network/mask
 #
 {% if tinyproxy_upstream_proxies is defined %}{% for proxy in tinyproxy_upstream_proxies %}
-Upstream {{ proxy.address }} {% if proxy.url is defined %}{{ proxy.url }}{% endif %}
+Upstream {{ proxy.address }} {% if proxy.url is defined %}"{{ proxy.url }}"{% endif %}
 
 {% endfor %}{% endif %}
 
