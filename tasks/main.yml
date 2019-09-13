@@ -1,10 +1,10 @@
 ---
-- name: mdrotthoff.tinyproxy | Install Tinyproxy for web access
+- name: Install Tinyproxy for web access
   yum:
     name: tinyproxy
     state: present
 
-- name: mdrotthoff.tinyproxy | Create the directory for the Tinyproxy log file
+- name: Create the directory for the Tinyproxy log file
   file:
     path: "{{ tinyproxy_logging.path }}"
     state: directory
@@ -12,16 +12,15 @@
     group: "{{ tinyproxy_os_group }}"
   when: tinyproxy_logging is defined
 
-- name: mdrotthoff.tinyproxy | Setup Tinyproxy Config file
+- name: Setup Tinyproxy Config file
   template:
     src: tinyproxy.conf.j2
     dest: "{{ tinyproxy_conf }}"
   notify:
     - restart tinyproxy
 
-- name: mdrotthoff.tinyproxy | Ensure Tinyproxy is running
+- name: Ensure Tinyproxy is running
   service:
     enabled: yes
     name: tinyproxy
     state: started
-
