@@ -6,10 +6,10 @@
 
 - name: Create the directory for the Tinyproxy log file
   file:
-    path: '{{ tinyproxy_logging.path }}'
+    path: "{{ tinyproxy_logging.path }}"
     state: directory
-    owner: {{ tinyproxy_os_user }}
-    group: {{ tinyproxy_os_group }}
+    owner: "{{ tinyproxy_os_user }}"
+    group: "{{ tinyproxy_os_group }}"
   when: tinyproxy_logging is defined
 
 - name: Setup Tinyproxy Config file
@@ -24,3 +24,4 @@
     enabled: yes
     name: tinyproxy
     state: started
+
