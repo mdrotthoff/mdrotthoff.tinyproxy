@@ -2,7 +2,7 @@
 #####################
 ## Restart handler ##
 
-- name: restart tinyproxy
+- name: mdrotthoff.tinyproxy | Handler | restart tinyproxy
   service:
     name: tinyproxy
     state: restarted
