@@ -194,7 +194,7 @@ MaxClients {{ tinyproxy_maxclients }}
 MinSpareServers {{ tinyproxy_minspareservers }}
 {% endif %}
 {% if tinyproxy_maxspareservers is defined %}
-MinSpareServers {{ tinyproxy_maxspareservers }}
+MaxSpareServers {{ tinyproxy_maxspareservers }}
 {% endif %}
 
 #
