@@ -7,10 +7,10 @@ tinyproxy_os_group: tinyproxy
 tinyproxy_conf: "/etc/tinyproxy/tinyproxy.conf"
 
 tinyproxy_maxclients: 25
-tinyproxy_minspare_servers: 2
-tinyproxy_maxspare_servers: 5
+tinyproxy_minspareservers: 2
+tinyproxy_maxspareservers: 5
 tinyproxy_startservers: 2
-#tinyproxy_maxrequest: 0
+#tinyproxy_maxrequestsperchild: 0
 
 #tinyproxy_allowed_subnets:
 #  - 0.0.0.0
