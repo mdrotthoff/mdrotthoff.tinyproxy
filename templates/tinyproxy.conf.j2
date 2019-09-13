@@ -233,11 +233,7 @@ Allow 127.0.0.1
 # is enabled, the string supplied will be used as the host name in the
 # Via header; otherwise, the server's host name will be used.
 #
-{% if tinyproxy_via_header is defined %}
-ViaProxyName "{{ tinyproxy_via_header }}"
-{% else %}
-#ViaProxyName "tinyproxy"
-{% endif %}
+ViaProxyName "{{ tinyproxy_via_header | default("tinyproxy") }}"
 
 #
 # DisableViaHeader: When this is set to yes, Tinyproxy does NOT add
