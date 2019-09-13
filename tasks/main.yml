@@ -4,6 +4,14 @@
     name: tinyproxy
     state: present
 
+- name: Create the directory for the Tinyproxy log file
+  file:
+    path: '{{ tinyproxy_logging.path }}'
+    state: directory
+    owner: {{ tinyproxy_os_user }}
+    group: {{ tinyproxy_os_group }}
+  when: tinyproxy_logging is defined
+
 - name: Setup Tinyproxy Config file
   template:
     src: tinyproxy.conf.j2

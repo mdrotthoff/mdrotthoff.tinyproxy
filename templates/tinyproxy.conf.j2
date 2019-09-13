@@ -94,7 +94,11 @@ StatFile "/usr/share/tinyproxy/stats.html"
 # and enable the Syslog directive.  These directives are mutually
 # exclusive.
 #
-Logfile "/var/log/tinyproxy/tinyproxy.log"
+{% if tinyproxy_logging is defined %}
+Logfile "{{ tinyproxy_logging.path | default("/var/log/tinyproxy") }}/{{ tinyproxy_logging.file | default("tinyproxy.log") }}"
+{% else %}
+Logfile /var/log/tinyproxy/tinyproxy.log
+{% endif %}
 
 #
 # Syslog: Tell tinyproxy to use syslog instead of a logfile.  This
@@ -118,7 +122,11 @@ Logfile "/var/log/tinyproxy/tinyproxy.log"
 # LogLevel was set to Warning, then all log messages from Warning to
 # Critical would be output, but Notice and below would be suppressed.
 #
-LogLevel {{ tinyproxy_log_level }}
+{% if tinyproxy_logging is defined %}
+LogLevel "{{ tinyproxy_logging.level | default("/var/log/tinyproxy") }}/{{ tinyproxy_logging.file | default("tinyproxy.log") }}"
+{% else %}
+LogLevel Info
+{% endif %}
 
 #
 # PidFile: Write the PID of the main tinyproxy thread to this file so it

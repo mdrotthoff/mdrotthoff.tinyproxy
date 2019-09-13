@@ -1,5 +1,10 @@
 ---
-tinyproxy_log_level: Info
+tinyproxy_logging:
+  level: Info
+  path: /var/log/tinyproxy
+  file: tinyproxy.log
+#tinyproxy_log_level: Info
+#tinyproxy_log_file: /var/log/tinyproxy/tinyproxy.log
 tinyproxy_os_user: tinyproxy
 tinyproxy_os_group: tinyproxy
 tinyproxy_conf: "/etc/tinyproxy/tinyproxy.conf"
