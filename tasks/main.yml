@@ -3,6 +3,8 @@
   yum:
     name: tinyproxy
     state: present
+  notify:
+    - Restart Tinyproxy
 
 - name: Create the directory for the Tinyproxy log file
   file:
@@ -17,10 +19,10 @@
     src: tinyproxy.conf.j2
     dest: "{{ tinyproxy_conf }}"
   notify:
-    - restart tinyproxy
+    - Restart Tinyproxy
 
-- name: Ensure Tinyproxy is running
-  service:
-    enabled: yes
-    name: tinyproxy
-    state: started
+#- name: Ensure Tinyproxy is running
+#  service:
+#    enabled: yes
+#    name: tinyproxy
+#    state: started
