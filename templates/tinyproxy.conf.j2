@@ -94,7 +94,8 @@ StatFile "/usr/share/tinyproxy/stats.html"
 # and enable the Syslog directive.  These directives are mutually
 # exclusive.
 #
-Logfile "{{ tinyproxy_log_path | default("/var/log/tinyproxy") }}/{{ tinyproxy_log_file | default("tinyproxy.log") }}"
+#Logfile "{{ tinyproxy_log_path | default("/var/log/tinyproxy") }}/{{ tinyproxy_log_file | default("tinyproxy.log") }}"
+Logfile "{{ tinyproxy_log_path }}/{{ tinyproxy_log_file }}"
 
 #
 # Syslog: Tell tinyproxy to use syslog instead of a logfile.  This
