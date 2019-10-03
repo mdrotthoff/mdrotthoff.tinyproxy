@@ -3,6 +3,11 @@
 # $Date$
 # $Source$
 
+
+###############################################
+# Tinyproxy installation & configuration role #
+###############################################
+
 - name: Dump the variables / facts known by Ansible for the Tinyproxy role
   include_role:
     name: mdrotthoff.ansible-debug
