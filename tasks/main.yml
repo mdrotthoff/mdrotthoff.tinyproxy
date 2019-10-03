@@ -1,4 +1,12 @@
 ---
+# $Author$
+# $Date$
+# $Source$
+
+- name: Dump the variables / facts known by Ansible for the Tinyproxy role
+  include_role:
+    name: mdrotthoff.ansible-debug
+
 - name: Install Tinyproxy for web access
   yum:
     name: tinyproxy
