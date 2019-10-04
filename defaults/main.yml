@@ -1,5 +1,5 @@
 ---
-tinyproxy_package_name: present
+tinyproxy_package_name: tinyproxy
 tinyproxy_package_state: present
 tinyproxy_log_level: Info
 tinyproxy_log_path: /var/log/tinyproxy
