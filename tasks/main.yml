@@ -14,8 +14,8 @@
 
 - name: Install Tinyproxy for web access
   yum:
-    name: tinyproxy
-    state: present
+    name: "{{ tinyproxy_package_name }}"
+    state: "{{ tinyproxy_package_state }}"
   notify:
     - Restart Tinyproxy
 

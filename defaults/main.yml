@@ -1,4 +1,6 @@
 ---
+tinyproxy_package_name: present
+tinyproxy_package_state: present
 tinyproxy_log_level: Info
 tinyproxy_log_path: /var/log/tinyproxy
 tinyproxy_log_file: tinyproxy.log
@@ -12,10 +14,8 @@ tinyproxy_maxspareservers: 5
 tinyproxy_startservers: 2
 #tinyproxy_maxrequestsperchild: 0
 
-#tinyproxy_allowed_subnets:
-#  - 0.0.0.0
-#  - 192.168.60.0/24
-#  - 192.168.61.0/24
+tinyproxy_allowed_subnets:
+  - 127.0.0.1/32
 
 #tinyproxy_listen_addresses:
 #  - 0.0.0.0
@@ -29,7 +29,7 @@ tinyproxy_timeout: 600
 
 tinyproxy_connect_ports:
   - 443
-#  - 563
+  - 563
 
 #tinyproxy_filtering:
 #  filter: "/etc/tinyproxy/filter"
